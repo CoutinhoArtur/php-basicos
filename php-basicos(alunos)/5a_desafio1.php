@@ -2,33 +2,38 @@
 <html>
 <body>
 
-    <!-- Formulário para entrada dos números -->
+    <!-- entrada (POST-servidor "offline") -->
     <form action="" method="POST">
-        <!-- Campo para o primeiro número -->
+        <!-- Campo para Nascimento -->
         <div>
             <label for="nasci">Nascimento:</label>
             <input type="number" id="nasci" name="nasci" required>
         </div>
         <br>
 
+            <!-- Campos para nome -->
         <div>
             <label for="nome">Nome:</label>
             <input type="text" id="nome" name="nome" required>
         </div>
         <br>
         
-        <!-- Botões do formulário -->
+        <!-- Botão -->
         <div>
-            <!-- Botão para calcular (enviar o formulário) -->
             <button type="submit">Enviar</button><br><br>
             
+              <!-- Botão para limpar resultados (recarrega a página sem parâmetros) -->
+            <button type="button" onclick="window.location.href=window.location.pathname">
+                Limpar Resultados
+            </button>      
+        </div>
     </form>
 
 
 <?php
-// Verifica se o formulário foi enviado
+// Verifica se foi enviado
  if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    // Recebe os valores enviados pelo formulário
+    // Recebe os valores enviados
     $nome = $_POST['nome'];
     $nasci = $_POST['nasci'];
 
